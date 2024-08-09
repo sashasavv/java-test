@@ -24,21 +24,21 @@ jobs:
 
     # - name: Install Firefox
     #   run: sudo apt-get install -y firefox && firefox --version
-    - name: Install Firefox 128.0
-      run: |
-        wget https://ftp.mozilla.org/pub/firefox/releases/128.0/linux-x86_64/en-US/firefox-128.0.tar.bz2
-        tar xjf firefox-128.0.tar.bz2
-        sudo mv firefox /opt/firefox-128.0
-        sudo ln -s /opt/firefox-128.0/firefox /usr/local/bin/firefox
+    # - name: Install Firefox 128.0
+    #   run: |
+    #     wget https://ftp.mozilla.org/pub/firefox/releases/128.0/linux-x86_64/en-US/firefox-128.0.tar.bz2
+    #     tar xjf firefox-128.0.tar.bz2
+    #     sudo mv firefox /opt/firefox-128.0
+    #     sudo ln -s /opt/firefox-128.0/firefox /usr/local/bin/firefox
 
-    - name: Install GeckoDriver
-      run: |
-        GECKODRIVER_VERSION=v0.34.0
-        wget https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
-        tar -xzf geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
-        sudo mv geckodriver /usr/local/bin/
-        sudo chmod +x /usr/local/bin/geckodriver
-        geckodriver --version
+    # - name: Install GeckoDriver
+    #   run: |
+    #     GECKODRIVER_VERSION=v0.34.0
+    #     wget https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
+    #     tar -xzf geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
+    #     sudo mv geckodriver /usr/local/bin/
+    #     sudo chmod +x /usr/local/bin/geckodriver
+    #     geckodriver --version
     
     # - name: Build and package the application
     #   run: mvn clean install
