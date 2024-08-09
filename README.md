@@ -1,4 +1,4 @@
-How to:
+**Instructions**:
 
 1. These tests are run in Firefox browser. Download a compatible version of geckodriver from https://github.com/mozilla/geckodriver/releases and put it into `/bin` directory in the root of the project.
 2. Run `mvn clean verify -P server-up` to start the local server with `QE-index.html` on http://localhost:8000.
