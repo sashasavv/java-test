@@ -62,4 +62,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: emailable-report
-        path: target/surefire-reports/emailable-report.html
+        path: target/surefire-reports/index.html
