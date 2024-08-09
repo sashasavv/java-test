@@ -55,8 +55,8 @@ jobs:
         kill $(cat server.pid)
         rm server.pid
     
-    - name: Upload Emailable Report
+    - name: Upload Report
       uses: actions/upload-artifact@v3
       with:
-        name: emailable-report
-        path: target/surefire-reports/emailable-report.html
+        name: reports
+        path: target/surefire-reports
