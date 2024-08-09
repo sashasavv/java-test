@@ -20,19 +20,21 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'temurin'  # Use Temurin for OpenJDK 17
+        distribution: 'temurin'
 
-    # - name: Install Firefox
-    #   run: sudo apt-get install -y firefox
+    - name: Install Firefox
+      run: sudo apt-get install -y firefox
 
-    # - name: Install GeckoDriver
-    #   run: |
-    #     GECKODRIVER_VERSION=v0.32.0
-    #     wget https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
-    #     tar -xzf geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
-    #     sudo mv geckodriver /usr/local/bin/
-    #     geckodriver --version
-
+   - name: Install GeckoDriver
+      run: |
+        GECKODRIVER_VERSION=v0.35.0
+        wget https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
+        tar -xzf geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
+        mkdir -p bin
+        mv geckodriver bin/
+        chmod +x bin/geckodriver
+        geckodriver --version
+    
     - name: Build and package the application
       run: mvn clean install
 
@@ -40,4 +42,4 @@ jobs:
       run: mvn clean verify -P server-up
 
     - name: Run TestNG Tests
-      run: mvn test
+      run: mvn test -P e2e
