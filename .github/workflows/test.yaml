@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  e2e:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,9 +39,6 @@ jobs:
         sudo chmod +x /usr/local/bin/geckodriver
         geckodriver --version
     
-    # - name: Build and package the application
-    #   run: mvn clean install
-
     - name: Start the server in the background
       run: |
         mvn clean verify -P server-up &
