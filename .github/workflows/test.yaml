@@ -58,8 +58,8 @@ jobs:
         kill $(cat server.pid)
         rm server.pid
     
-    - name: Upload Allure Results
+    - name: Upload Emailable Report
       uses: actions/upload-artifact@v3
       with:
-        name: allure-results
-        path: allure-results/
+        name: emailable-report
+        path: target/surefire-reports/emailable-report.html
