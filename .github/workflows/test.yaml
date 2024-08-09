@@ -39,7 +39,6 @@ jobs:
         sudo mv geckodriver /usr/local/bin/
         sudo chmod +x /usr/local/bin/geckodriver
         geckodriver --version
-        ls /usr/local/bin/geckodriver
     
     # - name: Build and package the application
     #   run: mvn clean install

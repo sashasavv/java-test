@@ -11,7 +11,7 @@ public class TestController {
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         try {
-            String driverPath = "/usr/local/bin/geckodriver";
+            String driverPath = System.getProperty("user.dir") + "/bin/geckodriver";
             System.setProperty("webdriver.gecko.driver", driverPath);
             driver = new FirefoxDriver();
         } catch (Exception e) {
@@ -19,7 +19,6 @@ public class TestController {
             e.printStackTrace();
         }
         driver.get("http://127.0.0.1:8000");
-
     }
 
     @AfterClass(alwaysRun = true)
