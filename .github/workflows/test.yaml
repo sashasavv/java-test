@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,8 +22,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    # - name: Install Firefox
-    #   run: sudo apt-get install -y firefox && firefox --version
+
     - name: Install Firefox 128.0
       run: |
         wget https://ftp.mozilla.org/pub/firefox/releases/128.0/linux-x86_64/en-US/firefox-128.0.tar.bz2
@@ -57,3 +57,9 @@ jobs:
       run: |
         kill $(cat server.pid)
         rm server.pid
+    
+    - name: Upload Allure Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results
+        path: allure-results/
