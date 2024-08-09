@@ -16,15 +16,16 @@ public class TestController {
             driver = new FirefoxDriver();
         } catch (Exception e) {
             System.err.println("Failed to initialize WebDriver: " + e.getMessage());
+            e.printStackTrace();
         }
         driver.get("http://127.0.0.1:8000");
 
     }
 
     @AfterClass(alwaysRun = true)
-    public void closeDriver() {
+    public void quitDriver() {
         if (driver != null) {
-            driver.close();
+            driver.quit();
         }
     }
 }

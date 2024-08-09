@@ -23,11 +23,11 @@ jobs:
         distribution: 'temurin'
 
     - name: Install Firefox
-      run: sudo apt-get install -y firefox
+      run: sudo apt-get install -y firefox && firefox --version
 
     - name: Install GeckoDriver
       run: |
-        GECKODRIVER_VERSION=v0.32.0
+        GECKODRIVER_VERSION=v0.34.0
         wget https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
         tar -xzf geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
         sudo mv geckodriver /usr/local/bin/
