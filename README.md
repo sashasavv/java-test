@@ -6,7 +6,7 @@ TestNG tests are located in `src/test/java/com/example` directory.
 
 **To launch tests from CI**:
 
-There is [GitHub Actions workflow](https://github.com/sashasavv/java-test/blob/main/.github/workflows/test.yaml) which runs tests in CI. 
+There is [GitHub Actions workflow](https://github.com/sashasavv/java-test/blob/main/.github/workflows/test.yaml) which runs tests headlessly in CI. 
 
 To launch tests, navigate to [the workflow in GitHub](https://github.com/sashasavv/java-test/actions/workflows/test.yaml) and click "Run workflow" button. 
 

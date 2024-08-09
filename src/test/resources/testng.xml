@@ -4,6 +4,10 @@
         <listener class-name="io.qameta.allure.testng.AllureTestNg"></listener>
     </listeners>
     <test name="All Tests">
+        <!-- Default to CI environment -->
+        <parameter name="env" value="ci" />
+        <!-- Default WebDriver path for CI -->
+        <parameter name="webdriver.path" value="/usr/local/bin/geckodriver" />
         <classes>
             <class name="com.example.AppTest" />
         </classes>
