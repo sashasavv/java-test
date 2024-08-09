@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,8 +26,11 @@ public class TestController {
         if (!geckoDriverFile.exists()) {
             throw new RuntimeException("Geckodriver file does not exist at path: " + driverPath);
         }
-            System.setProperty("webdriver.gecko.driver", driverPath);
-            driver = new FirefoxDriver();
+        // Set Firefox options to run in headless mode
+        FirefoxOptions options = new FirefoxOptions();
+        options.setHeadless(true);
+        System.setProperty("webdriver.gecko.driver", driverPath);
+        driver = new FirefoxDriver(options);
         } catch (Exception e) {
             System.err.println("Failed to initialize WebDriver: " + e.getMessage());
             e.printStackTrace();
