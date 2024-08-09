@@ -25,7 +25,7 @@ jobs:
     - name: Install Firefox
       run: sudo apt-get install -y firefox
 
-   - name: Install GeckoDriver
+    - name: Install GeckoDriver
       run: |
         GECKODRIVER_VERSION=v0.35.0
         wget https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
