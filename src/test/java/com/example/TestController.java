@@ -11,7 +11,15 @@ public class TestController {
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         try {
+            System.out.println("Project Directory: " + System.getProperty("user.dir"));
             String driverPath = System.getProperty("user.dir") + "/bin/geckodriver";
+            System.out.println("Geckodriver Path: " + driverPath);
+        
+        // Check if the file exists
+        File geckoDriverFile = new File(driverPath);
+        if (!geckoDriverFile.exists()) {
+            throw new RuntimeException("Geckodriver file does not exist at path: " + driverPath);
+        }
             System.setProperty("webdriver.gecko.driver", driverPath);
             driver = new FirefoxDriver();
         } catch (Exception e) {
