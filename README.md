@@ -16,7 +16,7 @@ The test report will be saved as a workflow artifact as in [this run](https://gi
 
 1. These tests are configured to run in Firefox browser. Download a compatible version of geckodriver from https://github.com/mozilla/geckodriver/releases and put it into `/usr/local/bin/` directory.
 2. Run `mvn clean verify -P server-up` to start the local server with `QE-index.html` on http://localhost:8000.
-3. To run end-to-end tests, open another terminal and run `mvn test -P e2e`.
+3. To run end-to-end tests, open another terminal and run `mvn test -Denv=local -Dwebdriver.path=<GECKODRIVER_PATH> -P e2e`.
 4. Observe test results in the terminal. To view TestNG test report, open `target/surefire-reports/index.html`.
 
    <img width="819" alt="Screenshot 2024-08-08 at 17 52 03" src="https://github.com/user-attachments/assets/58c47622-8fab-468c-880a-a196608a8a71">
