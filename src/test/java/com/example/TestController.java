@@ -10,7 +10,7 @@ public class TestController {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
-        String driverPath = System.getProperty("user.dir") + "/bin/geckodriver";
+        String driverPath = "/usr/local/bin/geckodriver";
         System.setProperty("webdriver.gecko.driver", driverPath);
         driver = new FirefoxDriver();
         driver.get("http://localhost:8000");

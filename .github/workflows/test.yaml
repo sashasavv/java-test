@@ -30,9 +30,8 @@ jobs:
         GECKODRIVER_VERSION=v0.35.0
         wget https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
         tar -xzf geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz
-        mkdir -p bin
-        mv geckodriver bin/
-        chmod +x bin/geckodriver
+        sudo mv geckodriver /usr/local/bin/
+        sudo chmod +x /usr/local/bin/geckodriver
         geckodriver --version
     
     - name: Build and package the application
