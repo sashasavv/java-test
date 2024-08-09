@@ -17,9 +17,8 @@ public class TestController {
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         try {
-            System.out.println("Project Directory: " + System.getProperty("user.dir"));
-            String driverPath = System.getProperty("user.dir") + "/bin/geckodriver";
-            System.out.println("Geckodriver Path: " + driverPath);
+            // System.out.println("Project Directory: " + System.getProperty("user.dir"));
+            String driverPath ="/usr/local//bin/geckodriver";
         
         // Check if the file exists
         File geckoDriverFile = new File(driverPath);
