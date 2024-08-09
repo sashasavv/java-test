@@ -29,6 +29,8 @@ public class TestController {
         // Set Firefox options to run in headless mode
         FirefoxOptions options = new FirefoxOptions();
         options.setHeadless(true);
+        options.addArguments("--disable-gpu"); // Disable GPU acceleration
+        options.addArguments("--no-sandbox"); // Disable sandboxing
         System.setProperty("webdriver.gecko.driver", driverPath);
         driver = new FirefoxDriver(options);
         } catch (Exception e) {
