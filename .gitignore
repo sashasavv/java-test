@@ -1,0 +1,5 @@
+/target
+/bin/**
+.vscode
+/allure-results
+.DS_Store
