@@ -1,13 +1,13 @@
 package com.example;
 
+import com.example.pageobjects.ButtonPage;
+import com.example.pageobjects.ListPage;
+import com.example.pageobjects.LoginPage;
+import com.example.pageobjects.OptionsSelectPage;
+import com.example.pageobjects.TablePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.example.pageobjects.LoginPage;
-import com.example.pageobjects.OptionsSelectPage;
-import com.example.pageobjects.ListPage;
-import com.example.pageobjects.ButtonPage;
-import com.example.pageobjects.TablePage;
 
 public class AppTest extends TestController {
     private LoginPage loginPage;
