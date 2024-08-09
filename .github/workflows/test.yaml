@@ -37,8 +37,18 @@ jobs:
     # - name: Build and package the application
     #   run: mvn clean install
 
-    - name: Start the server
-      run: mvn clean verify -P server-up
+    - name: Start the server in the background
+      run: |
+        mvn clean verify -P server-up &
+        echo $! > server.pid
+
+    - name: Wait for the server to start
+      run: sleep 5
 
     - name: Run TestNG Tests
-      run: mvn test -P e2e
+      run: mvn test -Pe2e
+
+    - name: Stop the server
+      run: |
+        kill $(cat server.pid)
+        rm server.pid
